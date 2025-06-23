@@ -1,15 +1,15 @@
-# Airpi-CloseWRT-CI 
-云编译Airpi-immortalwrt-mt798x-24.10固件6.6内核版本
+# Airpi-CloseWRT-CI
+云编译Airpi-immortalwrt-mt798x-24.10固件5.4内核版本
 
 PADAVANONLY-24.10源码：
-https://github.com/padavanonly/immortalwrt-mt798x-6.6.git
+https://github.com/padavanonly/immortalwrt-mt798x-24.10.git
 
 
 # 固件说明：
 
 Airpi 5g cpe专用精简版
 
-加入Qmodem/modem ttyd HomeProxy Xfrpc netspeedtest
+开启usboffload 加入Qmodem ttyd HomeProxy Xfrpc
 
 默认主机名：Airpi
 

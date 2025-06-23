@@ -11,9 +11,9 @@ WIFI_FILE="./package/mtk/applications/mtwifi-cfg/files/mtwifi.sh"
 #修改WIFI名称
 sed -i "s/ImmortalWrt/$WRT_SSID/g" $WIFI_FILE
 #修改WIFI加密
-sed -i "s/encryption=.*/encryption='psk2+ccmp'/g" $WIFI_FILE
+#sed -i "s/encryption=.*/encryption='psk2+ccmp'/g" $WIFI_FILE
 #修改WIFI密码
-sed -i "/set wireless.default_\${dev}.encryption='psk2+ccmp'/a \\\t\t\t\t\t\set wireless.default_\${dev}.key='$WRT_WORD'" $WIFI_FILE
+#sed -i "/set wireless.default_\${dev}.encryption='psk2+ccmp'/a \\\t\t\t\t\t\set wireless.default_\${dev}.key='$WRT_WORD'" $WIFI_FILE
 
 CFG_FILE="./package/base-files/files/bin/config_generate"
 #修改默认IP地址
@@ -33,6 +33,9 @@ if [ -n "$WRT_PACKAGE" ]; then
 fi
 
 #调整mtk系列配置
+sed -i '/TARGET.*mediatek/d' ./.config
+sed -i '/TARGET_MULTI_PROFILE/d' ./.config
+sed -i '/TARGET_PER_DEVICE_ROOTFS/d' ./.config
 sed -i '/luci-app-eqos/d' ./.config
 sed -i '/luci-app-mtk/d' ./.config
 sed -i '/luci-app-upnp/d' ./.config
